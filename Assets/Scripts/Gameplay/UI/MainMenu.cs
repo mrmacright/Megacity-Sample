@@ -64,6 +64,10 @@ namespace Unity.MegaCity.UI
             m_GameSettingsButton.clicked += () => { m_CurrentMenuItem = 2; SelectItem(m_CurrentMenuItem);  };
             m_QuitButton.clicked += () => { m_CurrentMenuItem = 3; SelectItem(m_CurrentMenuItem);  };
 
+            m_OnRailsButton.RegisterCallback<MouseOverEvent>(e => { m_CurrentMenuItem = 0; });
+            m_PlayerControllerButton.RegisterCallback<MouseOverEvent>(e => { m_CurrentMenuItem = 1; });
+            m_GameSettingsButton.RegisterCallback<MouseOverEvent>(e => { m_CurrentMenuItem = 2; });
+            m_QuitButton.RegisterCallback<MouseOverEvent>(e => { m_CurrentMenuItem = 3; });
 
             m_Options.Add(m_OnRailsButton);
             m_Options.Add(m_PlayerControllerButton);
